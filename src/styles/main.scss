@@ -1,0 +1,22 @@
+@import "normalize.scss";
+@import "elementui-custom.scss";
+
+// color
+.color-white { color: white; }
+
+// font-size
+.fs-12 { font-size: 12px; }
+.fs-14 { font-size: 14px; }
+.fs-16 { font-size: 16px; }
+.fs-18 { font-size: 18px; }
+.fs-20 { font-size: 20px; }
+
+// text-align
+.text-center { text-align: center; }
+
+// flex
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
