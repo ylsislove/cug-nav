@@ -1,4 +1,4 @@
-# unicom-assistant
+# cug-nav
 
 ## Project setup
 ```
