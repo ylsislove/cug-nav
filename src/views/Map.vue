@@ -4,6 +4,7 @@
     <Header title="地大校园在线游览平台" />
     <PositionStatusBar />
     <CUGModel />
+    <LeafletDemo />
     <!-- <OsmBuildings /> -->
     <!-- <Sidebar /> -->
   </div>
@@ -14,6 +15,7 @@ import config from '@/assets/config'
 import Header from '@/components/Header'
 import PositionStatusBar from '@/components/PositionStatusBar'
 import CUGModel from '@/components/CUGModel'
+import LeafletDemo from '@/components/LeafletDemo'
 // import OsmBuildings from '@/components/OsmBuildings'
 // import Sidebar from '@/components/Sidebar'
 export default {
@@ -21,7 +23,8 @@ export default {
   components: {
     Header,
     PositionStatusBar,
-    CUGModel
+    CUGModel,
+    LeafletDemo
     // OsmBuildings,
     // Sidebar
   },
@@ -116,6 +119,8 @@ export default {
 
       // 隐藏版权信息
       viewer._cesiumWidget._creditContainer.style.display = 'none'
+
+      // 隐藏全屏按钮
 
       // 去除默认的双击选择实体事件
       // viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(

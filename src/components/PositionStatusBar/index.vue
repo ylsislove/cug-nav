@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import Bus from '@/utils/bus.js'
 export default {
   name: 'PositionStatusBar',
   data() {
@@ -33,6 +34,9 @@ export default {
     this.handler.removeInputAction(Cesium.ScreenSpaceEventType.RIGHT_CLICK)
     this.handler.destroy()
     this.handler = null
+
+    // window.viewer.scene.camera.changed.removeEventListener(this.onCameraChanged)
+    viewer.scene.postRender.removeEventListener(this.onCameraChanged)
   },
   methods: {
     init() {
@@ -53,6 +57,10 @@ export default {
           `${camPos.lng}, ${camPos.lat}, ${camPos.height}, ${camPos.heading}, ${camPos.pitch}`
         )
       }, Cesium.ScreenSpaceEventType.RIGHT_CLICK)
+
+      // 监听相机移动事件
+      // viewer.scene.camera.changed.addEventListener(this.onCameraChanged)
+      viewer.scene.postRender.addEventListener(this.onCameraChanged)
     },
     getCameraPosition(viewer) {
       try {
@@ -63,7 +71,9 @@ export default {
         var heading = Cesium.Math.toDegrees(viewer.camera.heading).toFixed(2)
         var pitch = Cesium.Math.toDegrees(viewer.camera.pitch).toFixed(2)
         var roll = Cesium.Math.toDegrees(viewer.camera.roll).toFixed(2)
-        return { lng, lat, height, heading, pitch, roll }
+        var result = { lng, lat, height, heading, pitch, roll }
+        Bus.$emit('on-camera-change', result)
+        return result
       } catch (e) {
         return { lng: 0, lat: 0, height: 0, heading: 0, pitch: 0, roll: 0 }
       }
@@ -84,6 +94,16 @@ export default {
         return { lng, lat, height, heading, pitch, roll }
       } catch (e) {
         return { lng: 0, lat: 0, height: 0, heading: 0, pitch: 0, roll: 0 }
+      }
+    },
+    onCameraChanged() {
+      try {
+        var camPos = viewer.camera.positionCartographic
+        var lng = Cesium.Math.toDegrees(camPos.longitude).toFixed(8)
+        var lat = Cesium.Math.toDegrees(camPos.latitude).toFixed(8)
+        Bus.$emit('on-camera-change', { lng, lat })
+      } catch (e) {
+        console.log(e)
       }
     }
   }

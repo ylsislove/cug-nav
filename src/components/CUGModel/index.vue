@@ -56,6 +56,35 @@ export default {
           maximumNumberOfLoadedTiles: isMobile.any() ? 10 : 1000 // Temporary workaround for low memory mobile devices - Decrease (disable) tile cache.
         })
       )
+    },
+    createIcon(data) {
+      // 查询该图标是否已经被创建
+      if (window.viewer.entities.getById(data.id)) {
+        return
+      }
+      // 创建新图标
+      var lng = data.position.longitude
+      var lat = data.position.latitude
+      var entity = window.viewer.entities.add({
+        name: data.name,
+        id: data.id,
+        position: Cesium.Cartesian3.fromDegrees(lng, lat),
+        billboard: {
+          image: require('@/assets/icon/locale.png'),
+          width: 50,
+          height: 50,
+          heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+          horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
+          verticalOrigin: Cesium.VerticalOrigin.BOTTON,
+          disableDepthTestDistance: Number.MAX_SAFE_INTEGER
+        }
+      })
+      entity.externalData = {
+        lng,
+        lat,
+        desc: data.desc
+      }
+      return entity
     }
   }
 }
