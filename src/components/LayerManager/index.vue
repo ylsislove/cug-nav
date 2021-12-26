@@ -36,6 +36,7 @@
 </template>
 <script>
 import { onMounted, reactive, toRefs } from 'vue'
+import Bus from '@/utils/bus.js'
 export default {
   name: 'Sidebar',
   components: {},
@@ -55,7 +56,9 @@ export default {
         : 'el-icon-s-fold'
     }
 
-    const handleCUGModel = () => {}
+    const handleCUGModel = () => {
+      Bus.$emit('on-cug-model-visual-change')
+    }
 
     return {
       ...toRefs(data),

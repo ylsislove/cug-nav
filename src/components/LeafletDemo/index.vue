@@ -4,7 +4,6 @@
 <script>
 import { Map, TileLayer } from 'leaflet'
 import Bus from '@/utils/bus.js'
-
 export default {
   name: 'LeafletDemo',
   data() {

@@ -12,6 +12,7 @@
   </div>
 </template>
 <script>
+import Bus from '@/utils/bus.js'
 export default {
   name: 'CUGModel',
   data() {
@@ -65,7 +66,7 @@ export default {
       var viewer = window.viewer
 
       // 加载CUG模型
-      this.loadModel(viewer)
+      const cugModel = this.loadModel(viewer)
 
       // 设置点击事件
       this.setMouseLeftClickEventListener(viewer)
@@ -75,8 +76,16 @@ export default {
         this.localeEntities.push(this.createIcon(viewer, element))
       })
 
-      // 跟随地图移动
+      // 弹出框跟随地图移动
       viewer.scene.postRender.addEventListener(this.followMapToMove)
+
+      // 设置消息总线设置
+      Bus.$on('on-cug-model-visual-change', () => {
+        cugModel.show = !cugModel.show
+        this.localeEntities.forEach(entity => {
+          entity.show = !entity.show
+        })
+      })
     },
     followMapToMove() {
       if (!this.currentLocaleEntity) return
@@ -123,7 +132,7 @@ export default {
       }
 
       // Add tileset. Do not forget to reduce the default screen space error to 1
-      viewer.scene.primitives.add(
+      return viewer.scene.primitives.add(
         new Cesium.Cesium3DTileset({
           url: process.env.VUE_APP_FLAG + '/Scene/Production_1.json',
           maximumScreenSpaceError: isMobile.any() ? 8 : 1, // Temporary workaround for low memory mobile devices - Increase maximum error to 8.
