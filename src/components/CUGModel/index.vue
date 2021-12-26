@@ -125,7 +125,7 @@ export default {
       // Add tileset. Do not forget to reduce the default screen space error to 1
       viewer.scene.primitives.add(
         new Cesium.Cesium3DTileset({
-          url: '/devApi/Scene/Production_1.json',
+          url: process.env.VUE_APP_FLAG + '/Scene/Production_1.json',
           maximumScreenSpaceError: isMobile.any() ? 8 : 1, // Temporary workaround for low memory mobile devices - Increase maximum error to 8.
           maximumNumberOfLoadedTiles: isMobile.any() ? 10 : 1000 // Temporary workaround for low memory mobile devices - Decrease (disable) tile cache.
         })
