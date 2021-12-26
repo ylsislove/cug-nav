@@ -4,7 +4,8 @@ import router from './router'
 import store from './store'
 // element-ui
 import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+// import 'element-plus/dist/index.css'
+import 'element-plus/lib/theme-chalk/index.css'
 // cesium
 import 'cesium/Widgets/widgets.css'
 // leaflet

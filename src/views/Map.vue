@@ -5,8 +5,7 @@
     <PositionStatusBar />
     <CUGModel />
     <LeafletDemo />
-    <!-- <OsmBuildings /> -->
-    <!-- <Sidebar /> -->
+    <LayerManager />
   </div>
 </template>
 
@@ -16,17 +15,15 @@ import Header from '@/components/Header'
 import PositionStatusBar from '@/components/PositionStatusBar'
 import CUGModel from '@/components/CUGModel'
 import LeafletDemo from '@/components/LeafletDemo'
-// import OsmBuildings from '@/components/OsmBuildings'
-// import Sidebar from '@/components/Sidebar'
+import LayerManager from '@/components/LayerManager'
 export default {
   name: 'Map',
   components: {
     Header,
     PositionStatusBar,
     CUGModel,
-    LeafletDemo
-    // OsmBuildings,
-    // Sidebar
+    LeafletDemo,
+    LayerManager
   },
   mounted() {
     // Initialize Cesium
