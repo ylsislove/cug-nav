@@ -17,7 +17,49 @@ const config = {
     showCreditContainer: 'none'
   },
   depthTestAgainstTerrain: true,
-  debugShowFramesPerSecond: true
+  debugShowFramesPerSecond: true,
+  homeCameraView: {
+    show: true,
+    default: 'cug',
+    locale: [
+      {
+        name: 'earth',
+        lng: 105.354166666667,
+        lat: 28.7083333333333,
+        alt: 22000000,
+        heading: 0.0,
+        pitch: -90,
+        roll: 0.0
+      },
+      {
+        name: 'china',
+        lng: 105.354166666667,
+        lat: 28.7083333333333,
+        alt: 5000000,
+        heading: 0.0,
+        pitch: -90,
+        roll: 0.0
+      },
+      {
+        name: 'yuncheng',
+        lng: 111.02074308,
+        lat: 35.04524632,
+        alt: 2000,
+        heading: 0.0,
+        pitch: -90,
+        roll: 0.0
+      },
+      {
+        name: 'cug',
+        lng: 114.61348573,
+        lat: 30.45485255,
+        alt: 205.37,
+        heading: 357.64,
+        pitch: -23.88,
+        roll: 0.0
+      }
+    ]
+  }
 }
 
 export default config

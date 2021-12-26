@@ -27,10 +27,10 @@ export default {
   },
   mounted() {
     // Initialize Cesium
-    this.init()
+    const viewer = this.init()
 
     // Set the initial camera to look at Seattle
-    this.setCameraView()
+    this.setCameraView(viewer)
   },
   methods: {
     example1() {
@@ -47,19 +47,35 @@ export default {
       })
       viewer.zoomTo(viewer.entities)
     },
-    setCameraView() {
-      var viewer = window.viewer
-      viewer.scene.camera.setView({
-        destination: Cesium.Cartesian3.fromDegrees(
-          114.61348573,
-          30.45485255,
-          205.37
-        ),
-        orientation: {
-          heading: Cesium.Math.toRadians(357.64),
-          pitch: Cesium.Math.toRadians(-23.88)
+    setCameraView(viewer) {
+      // 读取配置文件
+      const views = {}
+      config.homeCameraView.locale.forEach(item => {
+        views[item.name] = {
+          destination: Cesium.Cartesian3.fromDegrees(
+            item.lng,
+            item.lat,
+            item.alt
+          ),
+          orientation: {
+            heading: Cesium.Math.toRadians(item.heading),
+            pitch: Cesium.Math.toRadians(item.pitch),
+            roll: Cesium.Math.toRadians(item.roll)
+          }
         }
       })
+
+      // 设置默认视角
+      if (config.homeCameraView.default) {
+        viewer.camera.setView(views[config.homeCameraView.default])
+        // 设置 Home 按钮
+        viewer.homeButton.viewModel.command.beforeExecute.addEventListener(
+          function (e) {
+            e.cancel = true
+            viewer.camera.setView(views[config.homeCameraView.default])
+          }
+        )
+      }
     },
     init() {
       // 设置自己的账户Token
@@ -118,7 +134,17 @@ export default {
       // 隐藏版权信息
       viewer._cesiumWidget._creditContainer.style.display = 'none'
 
-      // 隐藏全屏按钮
+      // 修改默认工具栏样式
+      const fullscreenContainer = document.getElementsByClassName(
+        'cesium-viewer-fullscreenContainer'
+      )[0]
+      fullscreenContainer.style =
+        'top: 7px; right: 45px; width: 32px; height: 32px; border-radius: 14%;'
+      const vrContainer = document.getElementsByClassName(
+        'cesium-viewer-vrContainer'
+      )[0]
+      vrContainer.style =
+        'top: 7px; right: 82px; width: 32px; height: 32px; border-radius: 14%;'
 
       // 去除默认的双击选择实体事件
       // viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(
@@ -138,6 +164,8 @@ export default {
 
       // 显示帧数
       viewer.scene.debugShowFramesPerSecond = config.debugShowFramesPerSecond
+
+      return viewer
     }
   }
 }
