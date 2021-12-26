@@ -77,6 +77,7 @@ export default {
         baseLayerPicker: vi.baseLayerPicker,
         navigationHelpButton: vi.navigationHelpButton,
         animation: vi.animation,
+        vrButton: true,
         timeline: vi.timeline,
         infoBox: vi.infoBox,
         selectionIndicator: vi.selectionIndicator,

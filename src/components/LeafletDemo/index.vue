@@ -37,7 +37,7 @@ export default {
 #leaflet-map {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 0px;
   width: 350px;
   height: 350px;
   // background: #fff;

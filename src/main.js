@@ -9,6 +9,8 @@ import 'element-plus/dist/index.css'
 import 'cesium/Widgets/widgets.css'
 // leaflet
 import 'leaflet/dist/leaflet.css'
+// svg全局组件
+import SvgIcon from '@/components/SvgIcon'
 
 const app = createApp(App)
 
@@ -18,4 +20,5 @@ app.config.globalProperties.$Bus = createApp(App)
 app.use(ElementPlus)
 app.use(store)
 app.use(router)
+app.component('svg-icon', SvgIcon)
 app.mount('#app')
