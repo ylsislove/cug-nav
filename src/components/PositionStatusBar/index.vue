@@ -52,10 +52,11 @@ export default {
 
       // add mouse right click event
       this.handler.setInputAction(() => {
-        var camPos = this.getCameraPosition(viewer)
-        console.log(
-          `${camPos.lng}, ${camPos.lat}, ${camPos.height}, ${camPos.heading}, ${camPos.pitch}`
-        )
+        // var camPos = this.getCameraPosition(viewer)
+        // console.log(
+        //   `${camPos.lng}, ${camPos.lat}, ${camPos.height}, ${camPos.heading}, ${camPos.pitch}`
+        // )
+        console.log(`lng: ${this.position.lng}, lat: ${this.position.lat}`)
       }, Cesium.ScreenSpaceEventType.RIGHT_CLICK)
 
       // 监听相机移动事件

@@ -26,6 +26,100 @@ export default {
         {
           id: 'locale_1',
           name: 'locale',
+          position: { lng: 114.61245791, lat: 30.46229093 },
+          desc: {
+            header: '教学服务中心',
+            content:
+              '在教学服务中心里可以办理中国银行的业务，也可以处理申请宿舍等之类的杂事~'
+          }
+        },
+
+        {
+          id: 'locale_2',
+          name: 'locale',
+          position: { lng: 114.61273096, lat: 30.46120867 },
+          desc: {
+            header: '地质过程与矿产资源国家重点实验室',
+            content: '简称国重一，没去过，功能不详~'
+          }
+        },
+        {
+          id: 'locale_3',
+          name: 'locale',
+          position: { lng: 114.61278653, lat: 30.46034689 },
+          desc: {
+            header: '生物地质与环境地质国家重点实验室',
+            content: '简称国重二，没去过，功能不详~'
+          }
+        },
+        {
+          id: 'locale_4',
+          name: 'locale',
+          position: { lng: 114.61089427, lat: 30.46115811 },
+          desc: {
+            header: '材料与化学学院',
+            content: '材化学子的主楼，里面应该进行着各种奇奇怪怪的实验~'
+          }
+        },
+        {
+          id: 'locale_5',
+          name: 'locale',
+          position: { lng: 114.61126023, lat: 30.46012181 },
+          desc: {
+            header: '环境学院',
+            content: '环境学子的主楼，了解不多，功能不详~'
+          }
+        },
+        {
+          id: 'locale_6',
+          name: 'locale',
+          position: { lng: 114.6137364, lat: 30.4620103 },
+          desc: {
+            header: '计算机学院',
+            content: '计算机系人骄傲的把秃头抬起~'
+          }
+        },
+        {
+          id: 'locale_7',
+          name: 'locale',
+          position: { lng: 114.61476276, lat: 30.46195053 },
+          desc: {
+            header: '地理与信息工程学院',
+            content: '都说地信的妹子多，但单身狗也很多（不是~'
+          }
+        },
+        {
+          id: 'locale_8',
+          name: 'locale',
+          position: { lng: 114.6101033, lat: 30.46133712 },
+          desc: {
+            header: '经济管理学院',
+            content: '经管学院，热门专业~'
+          }
+        },
+        {
+          id: 'locale_9',
+          name: 'locale',
+          position: { lng: 114.6132863, lat: 30.46037831 },
+          desc: {
+            header: '公共教学楼一',
+            content:
+              '简称公教一，平常上课的地方，在图书馆没开放之前也是自习的好地方~'
+          }
+        },
+        {
+          id: 'locale_10',
+          name: 'locale',
+          position: { lng: 114.61318679, lat: 30.46124233 },
+          desc: {
+            header: '公共教学楼二',
+            content:
+              '简称公教二，也是平常上课的地方，一些大大小小的考试也会在这里进行~'
+          }
+        },
+        {
+          id: 'locale_11',
+          name: 'locale',
           position: { lng: 114.61312912, lat: 30.45891608 },
           desc: {
             header: '地大图书馆',
@@ -34,13 +128,131 @@ export default {
           }
         },
         {
-          id: 'locale_2',
+          id: 'locale_12',
           name: 'locale',
           position: { lng: 114.61522975, lat: 30.4594947 },
           desc: {
             header: '大学生活动中心',
             content:
               '大学生活动中心会在节假日放一些电影，但可能并不会有多少人去看。除了电影，学校的毕业晚会之类的活动也是在这里举行~'
+          }
+        },
+        {
+          id: 'locale_13',
+          name: 'locale',
+          position: { lng: 114.61643206, lat: 30.46194485 },
+          desc: {
+            header: '室外体育场',
+            content: '晚上有很多人在这里跑步，当然，情侣也有很多~'
+          }
+        },
+        {
+          id: 'locale_14',
+          name: 'locale',
+          position: { lng: 114.615789, lat: 30.4606172 },
+          desc: {
+            header: '体育馆',
+            content:
+              '体育馆里可以游泳、健身、打篮球、羽毛球和乒乓球，是一个不错的地方~'
+          }
+        },
+        {
+          id: 'locale_15',
+          name: 'locale',
+          position: { lng: 114.6158737, lat: 30.45975515 },
+          desc: {
+            header: '教工食堂',
+            content: '顾名思义，如果你想偶遇老师，可以来这里试试~'
+          }
+        },
+        {
+          id: 'locale_16',
+          name: 'locale',
+          position: { lng: 114.61673554, lat: 30.45975035 },
+          desc: {
+            header: '博士后宿舍',
+            content: '听说博士后宿舍都是单人间，也不知道是不是真的~'
+          }
+        },
+        {
+          id: 'locale_17',
+          name: 'locale',
+          position: { lng: 114.61672771, lat: 30.45905879 },
+          desc: {
+            header: '学五组团研究生宿舍',
+            content: '这里还真不是很了解，欢迎投稿有趣的故事~'
+          }
+        },
+        {
+          id: 'locale_18',
+          name: 'locale',
+          position: { lng: 114.61568263, lat: 30.45881496 },
+          desc: {
+            header: '学三组团研究生宿舍',
+            content: '啊，研究生宿舍相比本科生最棒的一点就是可以乘坐电梯，乌拉~'
+          }
+        },
+        {
+          id: 'locale_19',
+          name: 'locale',
+          position: { lng: 114.61433113, lat: 30.45805824 },
+          desc: {
+            header: '学二组团本科女生宿舍',
+            content: '四人间，上床下桌，环境还行~'
+          }
+        },
+        {
+          id: 'locale_20',
+          name: 'locale',
+          position: { lng: 114.61192498, lat: 30.45803168 },
+          desc: {
+            header: '学一组团本科男生宿舍',
+            content: '四人间，上床下桌，环境还行~'
+          }
+        },
+        {
+          id: 'locale_21',
+          name: 'locale',
+          position: { lng: 114.60970945, lat: 30.45877555 },
+          desc: {
+            header: '学四组团留学生宿舍',
+            content: '这里还真不是很了解，欢迎投稿有趣的故事~'
+          }
+        },
+        {
+          id: 'locale_22',
+          name: 'locale',
+          position: { lng: 114.61318789, lat: 30.45799414 },
+          desc: {
+            header: '学生一食堂',
+            content: '简称学一，比教工食堂的饭菜要便宜一些，味道还行~'
+          }
+        },
+        {
+          id: 'locale_23',
+          name: 'locale',
+          position: { lng: 114.61062241, lat: 30.45843315 },
+          desc: {
+            header: '学生二食堂',
+            content: '简称学二，民族风味餐厅，偶尔在这里换换口味也是很不错哒~'
+          }
+        },
+        {
+          id: 'locale_24',
+          name: 'locale',
+          position: { lng: 114.60997625, lat: 30.46032926 },
+          desc: {
+            header: '校医院',
+            content: '看病的地方~'
+          }
+        },
+        {
+          id: 'locale_25',
+          name: 'locale',
+          position: { lng: 114.60885252, lat: 30.46198955 },
+          desc: {
+            header: '能源与物业中心',
+            content: '功能不详~'
           }
         }
       ]
@@ -234,6 +446,7 @@ export default {
     width: 100%;
     height: 75%;
     color: white;
+    line-height: 26px !important;
     font: 500 16px sans-serif;
   }
 }
