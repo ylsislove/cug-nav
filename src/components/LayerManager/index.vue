@@ -19,7 +19,10 @@
           <i class="el-icon-s-data"></i>
           <span>图层管理</span>
         </template>
-        <el-menu-item index="2-1" @click="handleCUGModel">
+        <el-menu-item index="1-1" @click="handleLeafletMap">
+          Leaflet图层
+        </el-menu-item>
+        <el-menu-item index="1-2" @click="handleCUGModel">
           地大校园3D模型
         </el-menu-item>
         <!-- <el-menu-item
@@ -56,6 +59,10 @@ export default {
         : 'el-icon-s-fold'
     }
 
+    const handleLeafletMap = () => {
+      Bus.$emit('on-leaflet-map-visual-change')
+    }
+
     const handleCUGModel = () => {
       Bus.$emit('on-cug-model-visual-change')
     }
@@ -63,6 +70,7 @@ export default {
     return {
       ...toRefs(data),
       handleCollapse,
+      handleLeafletMap,
       handleCUGModel
     }
   }

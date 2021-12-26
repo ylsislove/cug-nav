@@ -1,5 +1,5 @@
 <template>
-  <div id="leaflet-map"></div>
+  <div v-show="leafletMapVisible" id="leaflet-map"></div>
 </template>
 <script>
 import { Map, TileLayer } from 'leaflet'
@@ -7,7 +7,9 @@ import Bus from '@/utils/bus.js'
 export default {
   name: 'LeafletDemo',
   data() {
-    return {}
+    return {
+      leafletMapVisible: true
+    }
   },
   mounted() {
     const map = new Map('leaflet-map')
@@ -27,6 +29,10 @@ export default {
         [parseFloat(data.lat) - 0.001, parseFloat(data.lng) + 0.0025],
         15
       )
+    })
+
+    Bus.$on('on-leaflet-map-visual-change', () => {
+      this.leafletMapVisible = !this.leafletMapVisible
     })
   },
   methods: {}
