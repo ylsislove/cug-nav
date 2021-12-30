@@ -73,7 +73,7 @@ export default {
         var pitch = Cesium.Math.toDegrees(viewer.camera.pitch).toFixed(2)
         var roll = Cesium.Math.toDegrees(viewer.camera.roll).toFixed(2)
         var result = { lng, lat, height, heading, pitch, roll }
-        Bus.$emit('on-camera-change', result)
+        // Bus.$emit('on-camera-change', result)
         return result
       } catch (e) {
         return { lng: 0, lat: 0, height: 0, heading: 0, pitch: 0, roll: 0 }
